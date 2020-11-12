@@ -37,7 +37,6 @@ void loop() {
 
   // read pot
   pot_a = analogRead(POT_A);
-  float volts = mapFloat(pot_a, 0, 1023, 0, 5);
 
   // read button
   btn_a = digitalRead(BTN_A);
@@ -45,7 +44,7 @@ void loop() {
   #ifdef DEBUG
   Serial.print(pot);
   Serial.print(" ");
-  Serial.print(mapFloat(volts, 0, 1023, 0, 5), 2);
+  Serial.print(mapFloat(pot_a, 0, 1023, 0, 5), 2);
   Serial.print("v");
   Serial.print(" ");
   Serial.print(btn);
