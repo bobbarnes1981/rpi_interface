@@ -59,9 +59,10 @@ float mapFloat(float x, float in_min, float in_max, float out_min, float out_max
 void requestEvents() {
   Serial.println("I2C requestEvents, sending data... ");
   byte buttons = 0x00 | (btn_a);
+  byte leds = 0x00 | (led_a);
   byte pot_a_hi = highByte(pot_a);
   byte pot_a_lo = lowByte(pot_a);
-  char c[] = { buttons, pot_a_hi, pot_a_lo, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+  char c[] = { buttons, leds, pot_a_hi, pot_a_lo, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
   Wire.write(c, 16);
 }
 

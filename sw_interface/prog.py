@@ -38,6 +38,7 @@ def go():
         except Exception, e:
             print("Error: " + str(e))
     print("button a: " + str((0x01 & d[0][0])))
-    print("pot a: " + str(d[0][1] << 8 | d[0][2]))
+    print("led a: " + str((0x01 & d[0][1])))
+    print("pot a: " + str(d[0][2] << 8 | d[0][3]))
 
 go()
